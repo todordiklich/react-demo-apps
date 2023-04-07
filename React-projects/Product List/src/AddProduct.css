@@ -1,0 +1,46 @@
+fieldset {
+  max-width: fit-content;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+legend {
+  text-align: center;
+  font-style: italic;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form input {
+  border-radius: 5px;
+  width: 25rem;
+  margin-left: 0.5rem;
+}
+
+form button {
+  width: 10rem;
+  margin-top: 1rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+form p {
+  color: red;
+  margin: 0;
+}
+
+form input.invalid {
+  border: 1px solid red;
+}
+
+form label.invalid {
+  color: red;
+}
+
+form label.invalid::before {
+  content: '*';
+}
