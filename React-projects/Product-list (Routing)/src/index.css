@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 60vw;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #f1f0f2;
+}
+
+a {
+  color: #5e595c;
+  text-decoration: none;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  color: #747070;
+}
+
+.product {
+  font-size: 1.2rem;
+  text-align: center;
+  list-style: none;
+  color: #5e595c;
+}
+
+.product li {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.product li > a {
+  color: #5e595c;
+}
+
+.product li:hover {
+  background-color: #e7dbf6;
+}

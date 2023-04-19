@@ -1,0 +1,27 @@
+nav > ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+nav {
+  margin: 3rem;
+}
+
+.nav {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  width: 12rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+
+.nav:hover {
+  background-color: #e7dbf6;
+}
+
+.active {
+  background-color: #e7dbf6;
+}
