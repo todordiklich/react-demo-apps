@@ -1,43 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 const pin = '4587';
+let message = '';
 
 export default function App() {
   const [enteredPin, setEnteredPin] = useState('');
-  const [valid, setValid] = useState(false);
-  const [error, setError] = useState('');
 
   function enterPinHandler(num: number) {
+    const derivedPin = enteredPin + num;
+
     setEnteredPin((curr) => curr + num);
+
+    if (derivedPin.length === 1) {
+      message = '';
+    }
+
+    if (derivedPin.length === pin.length) {
+      if (derivedPin === pin) {
+        message = 'Correct!';
+      } else {
+        message = 'Invalid PIN';
+      }
+      setEnteredPin('');
+    }
   }
-
-  useEffect(() => {
-    if (enteredPin.length === 1) {
-      setValid(false);
-      setError('');
-    }
-
-    if (enteredPin.length !== pin.length) {
-      return;
-    }
-
-    if (enteredPin === pin) {
-      setValid(true);
-    } else {
-      setError('Invalid PIN');
-    }
-    setEnteredPin('');
-  }, [enteredPin]);
 
   return (
     <>
       {enteredPin.replaceAll(/[0-9]/g, '*')}
-      <div className="result">
-        {error ? error : ''}
-        {valid ? <p>Correct!</p> : ''}
-      </div>
+      <div className="result">{message}</div>
       <div className="numpad">
         {numbers.map((num) => (
           <button
