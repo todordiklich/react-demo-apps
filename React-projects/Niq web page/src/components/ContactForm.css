@@ -1,0 +1,12 @@
+.contacts {
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: start;
+  align-items: center;
+}
+
+.contacts-img {
+  width: 25px;
+}

@@ -1,0 +1,13 @@
+.map {
+  width: 50%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.contact-info {
+  width: 40%;
+}
+
+.contact-info .contacts {
+  margin: 2rem 0;
+}

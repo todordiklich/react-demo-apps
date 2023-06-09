@@ -1,0 +1,11 @@
+.home-description h1 {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  margin-left: 5rem;
+}
+
+.home-description q {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  font-style: italic;
+}
