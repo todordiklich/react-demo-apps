@@ -16,7 +16,7 @@ export default function About() {
       <section id="about">
         <div className="flex-container">
           <div className="pic experiance-pic">
-            <img src="../../public/niq_1.jpg" />
+            <img src="/niq_1.jpg" />
           </div>
           <div className="description experiance-description">
             <p>{aboutContent}</p>

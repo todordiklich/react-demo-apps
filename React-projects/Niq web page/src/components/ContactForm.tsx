@@ -14,22 +14,18 @@ export default function ContactForm() {
   return (
     <div className="contacts">
       <img
-        src="../../public/location-pin-svgrepo-com.svg"
+        src="/location-pin-svgrepo-com.svg"
         alt="location"
         className="contacts-img"
       />
       <p>{contactContent.location}</p>
       <img
-        src="../../public/email-address-sign-at-inbox-svgrepo-com.svg"
+        src="/email-address-sign-at-inbox-svgrepo-com.svg"
         alt="email"
         className="contacts-img"
       />
       <p>{contactContent.email}</p>
-      <img
-        src="../../public/phone-svgrepo-com.svg"
-        alt="phone"
-        className="contacts-img"
-      />
+      <img src="/phone-svgrepo-com.svg" alt="phone" className="contacts-img" />
       <p>{contactContent.phone}</p>
     </div>
   );

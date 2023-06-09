@@ -19,7 +19,7 @@ export default function Services() {
           {servicesContent.services.map((service, index) => (
             <div key={index}>
               <img
-                src="../../public/law-auction-svgrepo-com.svg"
+                src="/law-auction-svgrepo-com.svg"
                 alt="location"
                 className="service-img"
               />

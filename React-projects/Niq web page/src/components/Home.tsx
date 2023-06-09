@@ -23,7 +23,7 @@ export default function Home() {
             <ContactForm />
           </div>
           <div className="pic home-pic">
-            <img src="../../public/niq.jpg" alt="Адвокат Ния Диклич" />
+            <img src="/niq.jpg" alt="Адвокат Ния Диклич" />
           </div>
         </div>
       </section>
