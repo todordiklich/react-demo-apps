@@ -1,11 +1,31 @@
+.home-description {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
 .home-description h1 {
   color: var(--white-color);
-  font-size: 1.5rem;
-  margin-left: 5rem;
+  font-size: 2.4rem;
+  margin-bottom: 2.4rem;
 }
 
 .home-description q {
-  font-size: 1.2rem;
-  margin-left: 1rem;
+  font-size: 2rem;
   font-style: italic;
+}
+
+@media (max-width: 75em) {
+  .home-description q {
+    font-size: 1.6rem;
+  }
+
+  .pic img {
+    width: 75%;
+  }
+}
+
+@media (max-width: 46em) {
+  .pic img {
+    width: 90%;
+  }
 }

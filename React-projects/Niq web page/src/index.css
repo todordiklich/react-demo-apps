@@ -1,4 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary: #c9a988
+- Tints:
+
+- Shades: 
+
+- Accents:
+- Greys
+#3e4b61
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 06 BORDER-RADIUS
+
+Default: 15px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;500;600;700&family=Montserrat:wght@400;700&display=swap');
 
 :root {
   --dark-color: #100f0f;
@@ -10,47 +58,77 @@
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 html {
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+
   height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
+  line-height: 1;
+  font-weight: 400;
   min-height: 100%;
-  margin: 0;
-  overflow-x: hidden;
   background: linear-gradient(var(--light-dark-color), var(--dark-color))
     no-repeat fixed;
   color: var(--text-color);
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
 }
 
 section {
-  margin: 5rem 1.5rem;
-  padding: 1rem 8rem;
+  margin: 9.6rem 2.4rem;
+  padding: 1.2rem 9.6rem;
 }
 
 .flex-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 6.2rem;
+  row-gap: 4.8rem;
+  justify-items: center;
   align-items: center;
 }
 
 .description {
-  width: 50%;
   padding: 1rem;
 }
 
 .pic img {
-  width: 100%;
+  width: 60%;
   border-radius: var(--border-radius);
-  box-shadow: 10px 5px var(--border-radius) var(--border-radius)
-    rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .pic {
-  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 82em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 63em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 56em) {
+  .flex-container {
+    grid-template-columns: 1fr;
+  }
 }

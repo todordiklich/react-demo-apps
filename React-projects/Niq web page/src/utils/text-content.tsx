@@ -1,3 +1,5 @@
+const currentYear = new Date().getFullYear();
+
 export const content = {
   bg: {
     navigation: {
@@ -11,7 +13,7 @@ export const content = {
       quote: 'Персонално отношение към всеки проблем',
     },
     about:
-      'Аз съм адвокат Ния Диклич, юридическото си образование придобих в Благоевградския Югозападен университет "Неофит Рилски" през 2014 г. След успешно положени държавни изпити съм дипломиран магистър по право. От 2014 г. до 2017 г. изпълнявах длъжността юрисконсулт в нотариална кантора. От 2017 г. до 2022 г. работих в кантора на чатен съдебен изпълнител, отново като юрисконсулт, като през 2018г. придобих квалификацията за упражняване дейността на помощник - частен съдебен изпълнител. Обаче живота ме дърпа за крачола и сега съм нещо като адвокат съм си.',
+      'Аз съм адвокат Ния Диклич, юридическото си образование придобих в Благоевградския Югозападен университет "Неофит Рилски" през 2014 г. След успешно положени държавни изпити съм дипломиран магистър по право. От 2014 г. до 2017 г. изпълнявах длъжността юрисконсулт в нотариална кантора. От 2017 г. до 2022 г. работих в кантора на чатен съдебен изпълнител, отново като юрисконсулт, като през 2018г. придобих квалификацията за упражняване дейността на помощник - частен съдебен изпълнител.',
     services: {
       info: 'Адвокат Ния Диклич специализира и предоставя на клиентите си правни услуги в следните области:',
       services: [
@@ -31,7 +33,7 @@ export const content = {
       email: 'niqdiklich@gmail.com',
       phone: '+359 888 908 602',
     },
-    footer: 'Всички права запазени © 2023 | „Адвокат Ния Диклич”.',
+    footer: `Всички права запазени © ${currentYear} | „Адвокат Ния Диклич”.`,
   },
   en: {
     navigation: {
@@ -44,7 +46,7 @@ export const content = {
       name: 'Lawyer Niq Diklich',
       quote: 'Personal attitude to every problem',
     },
-    about: `I am lawyer Niya Diklich, I received my legal education at Blagoevgrad Southwestern University "Neofit Rilski" in 2014. After successfully passing state exams, I have a Master's degree in law. From 2014 to 2017, I worked as a legal consultant in a notary office. From 2017 to 2022, I worked in the office of a chat bailiff, again as a legal consultant, and in 2018 I acquired the qualification to exercise the activity of assistant - private bailiff. However, life is pulling me by the leg and now I am something of a lawyer.`,
+    about: `I am lawyer Niya Diklich, I received my legal education at Blagoevgrad Southwestern University "Neofit Rilski" in 2014. After successfully passing state exams, I have a Master's degree in law. From 2014 to 2017, I worked as a legal consultant in a notary office. From 2017 to 2022, I worked in the office of a chat bailiff, again as a legal consultant, and in 2018 I acquired the qualification to exercise the activity of assistant - private bailiff.`,
     services: {
       info: 'Lawyer Nia Diklich specializes and provides her clients with legal services in the following areas:',
       services: [
@@ -64,6 +66,6 @@ export const content = {
       email: 'niqdiklich@gmail.com',
       phone: '+359 888 908 602',
     },
-    footer: 'All rights reserved © 2023 | "Lawyer Nia Diklich".',
+    footer: `All rights reserved © ${currentYear} | "Lawyer Nia Diklich".`,
   },
 };

@@ -1,6 +1,19 @@
 .experiance-description {
-  font-size: 1.2rem;
-  letter-spacing: 0.075rem;
-  line-height: 1.75rem;
+  font-size: 1.8rem;
+  line-height: 2rem;
+  max-width: 60ch;
   font-style: italic;
+}
+
+@media (max-width: 75em) {
+  .experiance-description {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+}
+
+@media (max-width: 56em) {
+  .flex-container .experiance-description {
+    grid-row: 1;
+  }
 }

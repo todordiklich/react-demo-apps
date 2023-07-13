@@ -1,13 +1,32 @@
 .map {
-  width: 50%;
+  width: 100%;
+  height: 100%;
   border-radius: var(--border-radius);
   overflow: hidden;
 }
 
 .contact-info {
-  width: 40%;
+  font-size: 1.8rem;
 }
 
 .contact-info .contacts {
-  margin: 2rem 0;
+  margin: 2.4rem 0;
+}
+
+@media (max-width: 82em) {
+  .map {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 56em) {
+  .contact-info {
+    text-align: center;
+  }
+
+  .map {
+    width: 100%;
+    height: 100%;
+  }
 }

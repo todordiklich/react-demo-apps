@@ -1,12 +1,21 @@
 .contacts {
+  font-size: 1.6rem;
   margin: 5rem 0;
   display: grid;
-  grid-template-columns: 50px auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: repeat(3, 1fr);
+  column-gap: 2.4rem;
+  row-gap: 1.6rem;
   justify-items: start;
   align-items: center;
 }
 
+.contacts a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .contacts-img {
-  width: 25px;
+  width: 2.5rem;
 }
