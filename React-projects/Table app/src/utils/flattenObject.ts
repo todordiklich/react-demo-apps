@@ -1,15 +1,19 @@
-export function flattenObject(object: any) {
-  const result: any = {};
+export function flattenObject(object: object) {
+  const result: object = {};
 
   for (const key in object) {
-    if (typeof object[key] === 'object' && !Array.isArray(object[key])) {
-      const temp = flattenObject(object[key]);
+    if (
+      typeof object[key as keyof typeof object] === 'object' &&
+      !Array.isArray(object[key as keyof typeof object])
+    ) {
+      const temp = flattenObject(object[key as keyof typeof object]);
 
       for (const tempKey in temp) {
-        result[tempKey] = temp[tempKey];
+        result[tempKey as keyof typeof result] =
+          temp[tempKey as keyof typeof temp];
       }
     } else {
-      result[key] = object[key];
+      result[key as keyof typeof result] = object[key as keyof typeof object];
     }
   }
 

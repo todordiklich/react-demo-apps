@@ -17,15 +17,16 @@ function App() {
   const { isLoading, data, error } = useFetch(url);
 
   const [locations, headers] = useMemo(() => {
-    const locations = [];
-    const headers = [];
+    const locations: object[] = [];
+    const headers: string[] = [];
 
     if (data) {
-      const results: any[] = data.results;
+      const results: object[] = data['results' as keyof typeof data];
 
-      results.forEach(({ location }: any) =>
-        locations.push(flattenObject(location))
-      );
+      results.forEach((data) => {
+        const location = data['location' as keyof typeof data];
+        locations.push(flattenObject(location));
+      });
       Object.keys(locations[0]).forEach((key) => headers.push(key));
     }
     return [locations, headers];
@@ -35,7 +36,7 @@ function App() {
     [...locations],
     selectedHeader,
     sortOrder
-  ).filter((obj) =>
+  ).filter((obj: object) =>
     Object.values(obj).some((value) =>
       String(value).toLocaleLowerCase().includes(term.toLocaleLowerCase())
     )
@@ -94,9 +95,9 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {sortedLocations.map((location, index) => (
+          {sortedLocations.map((location: object, index: number) => (
             <tr key={index}>
-              {Object.values(location).map((value: any, idx) => (
+              {Object.values(location).map((value: string, idx) => (
                 <td key={idx}>{value}</td>
               ))}
             </tr>
