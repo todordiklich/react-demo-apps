@@ -39,6 +39,8 @@ header {
   width: 14rem;
   height: 3rem;
   font-size: inherit;
+  padding-left: 1rem;
+  outline: none;
 }
 
 @media (max-width: 56em) {

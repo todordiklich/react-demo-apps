@@ -1,15 +1,12 @@
-import { useContext } from 'react';
-
-import LanguageContext from '../store/lang-context';
 import { content } from '../utils/text-content';
+import useLanguageContext from '../hooks/useLanguageContext';
 
 import './About.css';
 
 export default function About() {
-  const langCtx = useContext(LanguageContext);
+  const { language } = useLanguageContext();
 
-  const aboutContent =
-    langCtx.language === 'bg' ? content.bg.about : content.en.about;
+  const aboutContent = language === 'bg' ? content.bg.about : content.en.about;
 
   return (
     <>

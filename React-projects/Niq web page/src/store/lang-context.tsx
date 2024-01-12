@@ -1,23 +1,24 @@
 import { ReactNode, createContext, useState } from 'react';
 
-type context = {
-  language: 'bg' | 'en';
-  onChangeLanguage: (lang: 'bg' | 'en') => void;
+type Language = 'bg' | 'en';
+
+type LanguageContext = {
+  language: Language;
+  onChangeLanguage: (lang: Language) => void;
 };
 
-const initialContext: context = {
-  language: 'bg',
-  onChangeLanguage: (lang: 'bg' | 'en') => {
-    /**/
-  },
+const LanguageContext = createContext<LanguageContext | null>(null);
+
+type LanguageContextProviderProps = {
+  children: ReactNode;
 };
 
-const LanguageContext = createContext(initialContext);
+export function LanguageContextProvider({
+  children,
+}: LanguageContextProviderProps) {
+  const [language, setLanguage] = useState<Language>('bg');
 
-export function LanguageContextProvider(props: { children: ReactNode }) {
-  const [language, setLanguage] = useState<'bg' | 'en'>('bg');
-
-  function languageChangeHandler(lang: 'bg' | 'en') {
+  function languageChangeHandler(lang: Language) {
     setLanguage(lang);
   }
 
@@ -28,7 +29,7 @@ export function LanguageContextProvider(props: { children: ReactNode }) {
         onChangeLanguage: languageChangeHandler,
       }}
     >
-      {props.children}
+      {children}
     </LanguageContext.Provider>
   );
 }

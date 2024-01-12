@@ -1,15 +1,13 @@
-import { useContext } from 'react';
-
-import LanguageContext from '../store/lang-context';
 import { content } from '../utils/text-content';
+import useLanguageContext from '../hooks/useLanguageContext';
 
 import './ContactForm.css';
 
 export default function ContactForm() {
-  const langCtx = useContext(LanguageContext);
+  const { language } = useLanguageContext();
 
   const contactContent =
-    langCtx.language === 'bg' ? content.bg.contacts : content.en.contacts;
+    language === 'bg' ? content.bg.contacts : content.en.contacts;
 
   return (
     <div className="contacts">
@@ -23,6 +21,7 @@ export default function ContactForm() {
           href={
             'https://www.google.com/maps/place/ul.+%22Ivan+Gyuzelev%22+1%D0%91,+5300+Gabrovo+Center,+Gabrovo/@42.870517,25.317484,18z/data=!4m6!3m5!1s0x40a91ab7612de5bd:0x8854e9c3d8ea846!8m2!3d42.8705174!4d25.3174835!16s%2Fg%2F11c5m1v2cm?hl=en&entry=ttu'
           }
+          target="_blank"
         >
           {contactContent.location}
         </a>

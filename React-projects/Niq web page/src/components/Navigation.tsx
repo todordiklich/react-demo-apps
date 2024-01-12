@@ -1,20 +1,21 @@
-import { useContext } from 'react';
-
-import LanguageContext from '../store/lang-context';
 import { content } from '../utils/text-content';
+import useLanguageContext from '../hooks/useLanguageContext';
 
 import './Navigation.css';
 
-interface IProps {
-  onMenuBtnClick: () => void;
-  onLinkClick: () => void;
-}
+type NavigationProps = {
+  onMenuBtnClick?: () => void;
+  onLinkClick?: () => void;
+};
 
-export default function Navigation(props: IProps) {
-  const langCtx = useContext(LanguageContext);
+export default function Navigation(props: NavigationProps) {
+  const { language, onChangeLanguage } = useLanguageContext();
+
+  document.title =
+    language === 'bg' ? 'Адвокат Ния Диклич' : 'Lawyer Niya Diklich';
 
   const navContent =
-    langCtx.language === 'bg' ? content.bg.navigation : content.en.navigation;
+    language === 'bg' ? content.bg.navigation : content.en.navigation;
 
   return (
     <>
@@ -30,10 +31,8 @@ export default function Navigation(props: IProps) {
           <li className="nav-bar__item">
             <select
               id="lang-select"
-              value={langCtx.language}
-              onChange={(e) =>
-                langCtx.onChangeLanguage(e.target.value as 'bg' | 'en')
-              }
+              value={language}
+              onChange={(e) => onChangeLanguage(e.target.value as 'bg' | 'en')}
             >
               <option value="bg">Български</option>
               <option value="en">English</option>

@@ -1,15 +1,13 @@
-import { useContext } from 'react';
-
-import LanguageContext from '../store/lang-context';
 import { content } from '../utils/text-content';
 
 import './Services.css';
+import useLanguageContext from '../hooks/useLanguageContext';
 
 export default function Services() {
-  const langCtx = useContext(LanguageContext);
+  const { language } = useLanguageContext();
 
   const servicesContent =
-    langCtx.language === 'bg' ? content.bg.services : content.en.services;
+    language === 'bg' ? content.bg.services : content.en.services;
 
   return (
     <>

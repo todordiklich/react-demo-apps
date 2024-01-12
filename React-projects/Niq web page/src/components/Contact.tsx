@@ -1,16 +1,14 @@
-import { useContext } from 'react';
-
-import LanguageContext from '../store/lang-context';
 import { content } from '../utils/text-content';
 import ContactForm from './ContactForm';
+import useLanguageContext from '../hooks/useLanguageContext';
 
 import './Contact.css';
 
 export default function Contact() {
-  const langCtx = useContext(LanguageContext);
+  const { language } = useLanguageContext();
 
   const contactContent =
-    langCtx.language === 'bg' ? content.bg.contacts : content.en.contacts;
+    language === 'bg' ? content.bg.contacts : content.en.contacts;
 
   return (
     <>

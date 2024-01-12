@@ -1,16 +1,13 @@
-import { useContext } from 'react';
-
-import LanguageContext from '../store/lang-context';
 import { content } from '../utils/text-content';
 import ContactForm from './ContactForm';
+import useLanguageContext from '../hooks/useLanguageContext';
 
 import './Home.css';
 
 export default function Home() {
-  const langCtx = useContext(LanguageContext);
+  const { language } = useLanguageContext();
 
-  const homeContent =
-    langCtx.language === 'bg' ? content.bg.home : content.en.home;
+  const homeContent = language === 'bg' ? content.bg.home : content.en.home;
 
   return (
     <>
